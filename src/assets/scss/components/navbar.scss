@@ -1,4 +1,13 @@
+@import 'textrules.scss';
+@include textrules;
+
 @mixin navbar {
+    
+    @keyframes blink {
+        from { border-color: transparent }
+        to { border-color: rgb(0, 0, 0); }
+    }
+
     .navbar {
         align-content: center;
         background-color: rgb(243, 247, 13);
@@ -6,20 +15,40 @@
         align-items: center;
         text-align: center;
 
-        
-        
         text-rendering: auto ;
         font-family: monospace;
-
-
-    }
-    .item {
-        color: rgb(0, 0, 0);
-    }
-    a:hover {
-        background: #ffffff;
         
+        li {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            a{
+                color: #000000;
+            }
+            a:hover {
+                background: #ffffff;
+
+            } 
+        }
+
     }
 
+
+    .archive-navbar {
+        align-content: flex-start;
+        background-color: #000000;
+
+        text-rendering: auto;
+        li {
+            text-decoration: none;
+            color: white;
+
+            a:hover {
+                
+                animation:
+                    blink forwards;
+            }
+        }
+    }
     
 }
+

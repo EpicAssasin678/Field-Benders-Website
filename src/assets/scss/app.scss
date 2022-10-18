@@ -4,9 +4,12 @@
 @import 'foundation';
 @import 'motion-ui';
 @import 'components/navbar.scss';
+@import 'components/textrules.scss';
 
 //custom mixins
 @include navbar;
+@include textrules;
+
 
 // Global styles
 @include foundation-global-styles;

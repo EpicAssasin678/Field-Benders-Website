@@ -1,0 +1,49 @@
+@mixin set-font($family: 'monospace', $weight: 400, $style: normal) {
+    font-family: $family !important;
+    font-style: $style;
+    font-weight: $weight;
+}
+
+
+@mixin textrules {
+    @keyframes typing {
+        from { width: 0}
+        to {width: 100%}
+    }
+
+    @keyframes blink {
+        from { border-color: transparent }
+        to { border-color: rgb(0, 0, 0); }
+    }
+
+    .typewriter-effect  {
+        overflow: hidden;
+        border-right: .10em solid rgb(0, 0, 0);
+        white-space: nowrap;
+        //font-size: 1.6rem;
+        font-size: 80px;
+        width: 0;
+        animation: 
+            typing 1s steps(20, end) forwards,
+            blink 1s infinite; 
+    }
+
+    .typewriter-container {
+
+        display : inline-block;
+    }
+
+
+    .title {
+        @include set-font("hackedregular", 400, normal);
+        color: black;
+    }
+    .heading2 {
+        @include set-font();
+    }
+    p {
+        @include set-font('monospace', 200, normal);
+    }
+
+
+}
