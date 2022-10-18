@@ -1,0 +1,25 @@
+@mixin navbar {
+    .navbar {
+        align-content: center;
+        background-color: rgb(243, 247, 13);
+
+        align-items: center;
+        text-align: center;
+
+        
+        
+        text-rendering: auto ;
+        font-family: monospace;
+
+
+    }
+    .item {
+        color: rgb(0, 0, 0);
+    }
+    a:hover {
+        background: #ffffff;
+        
+    }
+
+    
+}

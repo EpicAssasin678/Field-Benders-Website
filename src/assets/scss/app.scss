@@ -3,6 +3,10 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+@import 'components/navbar.scss';
+
+//custom mixins
+@include navbar;
 
 // Global styles
 @include foundation-global-styles;
