@@ -1,6 +1,7 @@
 @import 'textrules.scss';
 @include textrules;
 
+
 @mixin navbar {
     
     @keyframes blink {
@@ -8,6 +9,7 @@
         to { border-color: rgb(0, 0, 0); }
     }
 
+    
     .navbar {
         align-content: center;
         background-color: rgb(243, 247, 13);
@@ -48,6 +50,15 @@
                     blink forwards;
             }
         }
+    }
+
+    
+    .chapters-navbar {
+        
+    } 
+
+    .menu-icon::after {
+        
     }
     
 }
