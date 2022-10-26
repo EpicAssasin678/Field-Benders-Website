@@ -1,0 +1,75 @@
+@import '../textrules.scss';
+
+@mixin archiveDefault {
+
+    body {
+        z-index: -1;
+
+    }
+    
+    .bd-black {
+        background-color: #000000 !important;
+        & {
+            background-color: #000000 !important;
+        }
+    }
+    
+    .archive-default {
+        
+        
+        @include glitch;
+        z-index: 0;
+        //element selectors
+
+        p {
+            @include set-font(('consolasregular'), 400, normal);
+            color: white;
+        }
+        .cell {
+            h2, h4 {
+                @include set-font(('consolasbold'), 400, normal);
+                color: white;
+            }
+        }
+        //ID-selector specifics
+        #current-location {
+            p {
+                margin-left: $global-margin;
+                margin-bottom: 0rem;
+                animation: textblink 1s infinite,
+                textblink 0s 1 infinite;
+            }
+            background-color: black;
+            border-top: white 1px solid;
+            border-width: 1px;
+            color: white;
+        }
+
+        #terminal-logo {       
+            z-index: 1;
+            position:absolute;
+            width: 6em;
+            bottom: 90%;
+            left: 25%;
+            margin-top: 5%; 
+            margin-right: 10%;
+            margin-left: 66%;
+
+        }
+        
+        .title {
+            display: inline-block;
+            color: white;
+            //animation: glitch 1s linear infinite;
+        }
+
+        .order-one {
+            z-index: 1;
+        }
+
+        .formatted-text {
+            color: white;
+        }
+
+    }
+}

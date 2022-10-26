@@ -4,6 +4,76 @@
     font-weight: $weight;
 }
 
+@mixin set-textblink($tcolor: #fffff0) {
+    @keyframes textblink {
+        from { color: rgba($color: $tcolor, $alpha: 1.0);}
+        to {color: rgba($color: $tcolor, $alpha: 0.0);}
+    }
+    
+}
+
+@mixin glitch {
+    
+    div.glitch-container {
+        animation: glitch 1s linear infinite;
+    }
+    @keyframes glitch{
+        2%,64%{
+        transform: translate(2px,0) skew(0deg);
+        }
+        4%,60%{
+        transform: translate(-2px,0) skew(0deg);
+        }
+        62%{
+        transform: translate(0,0) skew(5deg); 
+        }
+    }
+
+    div.glitch-container:before,
+    div.glitch-container:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    }
+
+    div.glitch-container:before{
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    @keyframes glitchTop{
+        2%,64%{
+          transform: translate(2px,-2px);
+        }
+        4%,60%{
+          transform: translate(-2px,2px);
+        }
+        62%{
+          transform: translate(13px,-1px) skew(-13deg); 
+        }
+      }
+
+    div.glitch-container:after{
+        animation: glitchBottom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+    
+    @keyframes glitchBottom{
+        2%,64%{
+            transform: translate(-2px,0);
+        }
+        4%,60%{
+            transform: translate(-2px,0);
+        }
+        62%{
+            transform: translate(-22px,5px) skew(21deg); 
+        }
+    }
+    
+
+}
 
 @mixin textrules {
     @keyframes typing {
@@ -12,9 +82,15 @@
     }
 
     @keyframes blink {
-        from { border-color: transparent }
+        from { border-color: transparent; }
         to { border-color: rgb(0, 0, 0); }
     }
+
+    @keyframes textblink {
+        from {color: rgba($color: #ffffff, $alpha: 1.0);}
+        to {color: rgba($color: #ffffff, $alpha: 0.0);}
+    }
+
 
     .typewriter-effect  {
         overflow: hidden;
@@ -25,25 +101,29 @@
         width: 0;
         animation: 
             typing 1s steps(20, end) forwards,
-            blink 1s infinite; 
+            blink 1s infinite;
+            
+        animation-delay: 0s, 1s;
     }
 
     .typewriter-container {
-
         display : inline-block;
     }
-
-
     .title {
-        @include set-font("hackedregular", 400, normal);
+        @include set-font(("hackedregular"), 400, normal);
         color: black;
     }
     .heading2 {
-        @include set-font();
+        @include set-font(('consolasregular'), 400, normal);
     }
     p {
-        @include set-font('monospace', 200, normal);
+        @include set-font(('consolasregular'), 400, normal);
     }
-
+    h2 {
+        @include set-font(('hackedregular'), 400, normal);
+    }
+    h4 {
+        @include set-font(('hackedregular'), 400, normal);
+    }
 
 }

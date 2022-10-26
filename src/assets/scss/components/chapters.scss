@@ -1,0 +1,54 @@
+
+@mixin chapters-search-area {
+
+    @keyframes blink2 {
+        from {border-color: transparent}
+        to {border-color: rgb(255, 255, 255)}
+    }
+
+    .search-area {
+        //justify-content: center;
+        
+        align-items: center;
+
+        font-family: monospace;
+        font-size: 1.5em;
+        background-color: rgba($color: #fb2c2c, $alpha: 1.0);
+        
+
+        li {
+            text-decoration: none;
+            color: black;
+
+            a {
+                color: black;
+            }
+            a:hover {
+               // background: black;
+                color: rgb(16, 16, 16);
+                background-color: white;
+                animation: blink2 1s infinite;
+            }
+
+        
+        }
+
+    }
+
+    #chapters-table {
+
+        justify-content: center;
+
+
+    }
+
+}
+
+@mixin chapter {
+
+    .chapter-title {
+
+    }
+    
+
+}

@@ -5,11 +5,14 @@
 @import 'motion-ui';
 @import 'components/navbar.scss';
 @import 'components/textrules.scss';
+@import 'components/chapters.scss';
+@import 'components/archive/index.scss';
 
 //custom mixins
 @include navbar;
 @include textrules;
-
+@include chapters-search-area;
+@include archiveDefault;
 
 // Global styles
 @include foundation-global-styles;

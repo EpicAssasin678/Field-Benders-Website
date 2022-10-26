@@ -40,12 +40,18 @@
         background-color: #000000;
 
         text-rendering: auto;
+        font-family: monospace;
+        
         li {
             text-decoration: none;
             color: white;
-
+            a {
+                color: white;
+            }
             a:hover {
-                
+                background-color: white;
+                color: #000000;
+
                 animation:
                     blink forwards;
             }
@@ -61,5 +67,6 @@
         
     }
     
+
 }
 
